@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: java-nginx
+  labels:
+    app: java-nginx
+  namespace: test-ns
+spec:
+  containers:
+  - name: javacontainer
+    image: dockerhandson/java-web-application:1
+    ports:
+    - containerPort: 8080
+  - name: nginxcontainer
+    image: nginx
+    ports:
+    - containerPort: 80

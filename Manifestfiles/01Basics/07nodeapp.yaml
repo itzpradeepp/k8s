@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodeapppod
+  labels:
+    app: nodeapp
+spec:
+  containers:
+  - name: nodeappcont
+    image: dockerhandson/node-app-mss:1
+    ports:
+    - containerPort: 9981
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: nodeappsvc
+spec:
+  type: NodePort
+  selector:
+    app: nodeapp
+  ports:
+  - port: 80
+    targetPort: 9981

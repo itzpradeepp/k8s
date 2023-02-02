@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-ns
+  labels:
+    team: test
+    teamManager: Pradeep
+
+## kubectl apply -f 01.yaml 
+
+## kubectl config set-context --current --namespace test-ns
